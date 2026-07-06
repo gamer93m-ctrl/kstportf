@@ -42,6 +42,24 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Liquid glass для таббара: сильно прозрачный, мощный блюр с сатурацией,
+   светящаяся кромка сверху — контент под ним «плывёт» при скролле */
+.glass-nav {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(165deg, rgba(82, 82, 86, 0.38), rgba(44, 44, 46, 0.44)) padding-box,
+    linear-gradient(
+        165deg,
+        rgba(255, 255, 255, 0.55),
+        rgba(255, 255, 255, 0.12) 40%,
+        rgba(255, 255, 255, 0.04)
+      )
+      border-box;
+  backdrop-filter: blur(26px) saturate(1.8);
+  -webkit-backdrop-filter: blur(26px) saturate(1.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
 .skeleton {
   background:
     linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.65) 50%, transparent 70%)
