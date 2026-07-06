@@ -17,7 +17,7 @@ export default function Sidebar() {
           {profile.badges.map((b) => (
             <span
               key={b}
-              className="border-line rounded-full border bg-white px-3.5 py-1.5 text-xs font-medium text-ink-soft"
+              className="glass-chip rounded-full px-3.5 py-1.5 text-xs font-medium text-ink-soft"
             >
               {b}
             </span>
@@ -37,7 +37,7 @@ export default function Sidebar() {
             href={profile.contact}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-pill inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-95"
+            className="glass-dark inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-95"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
@@ -48,7 +48,7 @@ export default function Sidebar() {
             href={profile.cv}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-line inline-flex items-center gap-2 rounded-full border bg-white px-5 py-2.5 text-sm font-medium transition-transform hover:scale-[1.03] active:scale-95"
+            className="glass-chip inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-transform hover:scale-[1.03] active:scale-95"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

@@ -34,7 +34,7 @@ export default function FloatingNav() {
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-        className="bg-pill/95 pointer-events-auto flex max-w-[calc(100vw-2rem)] items-center gap-1 overflow-x-auto rounded-full p-1.5 shadow-xl shadow-black/25 backdrop-blur"
+        className="glass-dark pointer-events-auto flex max-w-[calc(100vw-2rem)] items-center gap-1 overflow-x-auto rounded-full p-1.5"
         aria-label="Навигация по кейсам"
       >
         {navItems.map((item) => {
