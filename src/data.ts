@@ -253,8 +253,8 @@ export const profile = {
   grade: '(Senior UX/UI)',
   intro:
     'Привет, меня зовут Константин — продуктовый дизайнер, который успешно сочетает креативное мышление и стратегический подход для создания инновационных и удобных продуктов.',
-  email: 'mailto:hello@example.com',
-  cv: '#',
+  contact: 'https://t.me/design_badman',
+  cv: 'https://docs.google.com/document/d/1_i4bTUx2DDxh657j1yRCmiogHx8ZfnYRnIIQrEBzAKo/view',
 }
 
 export const navItems = [
