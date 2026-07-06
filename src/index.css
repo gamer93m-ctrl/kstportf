@@ -18,6 +18,24 @@ body {
   @apply bg-white font-sans text-ink antialiased;
 }
 
+.skeleton {
+  background:
+    linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.65) 50%, transparent 70%)
+      no-repeat,
+    #ececea;
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
 ::selection {
   background: #1c1c1e;
   color: #fff;

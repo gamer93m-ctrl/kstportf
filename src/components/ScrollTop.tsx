@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 
 export default function ScrollTop() {
   const [visible, setVisible] = useState(false)
@@ -14,7 +14,7 @@ export default function ScrollTop() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.button
+        <m.button
           type="button"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -26,7 +26,7 @@ export default function ScrollTop() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <path d="M12 19V5M5 12l7-7 7 7" />
           </svg>
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   )

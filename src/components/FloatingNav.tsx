@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { navItems } from '../data'
 
 export default function FloatingNav() {
@@ -30,7 +30,7 @@ export default function FloatingNav() {
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-5 z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
-      <motion.nav
+      <m.nav
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
@@ -49,7 +49,7 @@ export default function FloatingNav() {
               }`}
             >
               {isActive && (
-                <motion.span
+                <m.span
                   layoutId="nav-pill"
                   transition={{ type: 'spring', stiffness: 450, damping: 35 }}
                   className="absolute inset-0 rounded-full bg-white"
@@ -59,7 +59,7 @@ export default function FloatingNav() {
             </button>
           )
         })}
-      </motion.nav>
+      </m.nav>
     </div>
   )
 }

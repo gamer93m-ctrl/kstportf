@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import type { CaseBlock, CaseStudy, Figure } from '../data'
 import { Chip, MetricChip } from './Chip'
+import SmartImage from './SmartImage'
 
 function FadeIn({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -13,7 +14,7 @@ function FadeIn({ children, className }: { children: React.ReactNode; className?
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -69,7 +70,7 @@ function FigureGrid({ figures }: { figures: Figure[] }) {
         <FadeIn key={f.src}>
           <figure>
             <div className="border-line overflow-hidden rounded-2xl border bg-white">
-              <img src={f.src} alt={f.caption} loading="lazy" className="w-full" />
+              <SmartImage src={f.src} alt={f.caption} width={f.width} height={f.height} />
             </div>
             <figcaption className="mt-2.5 text-center text-xs text-ink-soft">{f.caption}</figcaption>
           </figure>
@@ -78,18 +79,24 @@ function FigureGrid({ figures }: { figures: Figure[] }) {
       {normal.length > 0 && (
         <div className={`grid grid-cols-1 gap-6 ${cols}`}>
           {normal.map((f, i) => (
-            <motion.figure
+            <m.figure
               key={f.src}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: 'easeOut' }}
             >
-              <img src={f.src} alt={f.caption} loading="lazy" className="w-full" />
+              <SmartImage
+                src={f.src}
+                alt={f.caption}
+                width={f.width}
+                height={f.height}
+                className="rounded-2xl"
+              />
               <figcaption className="mt-2.5 text-center text-xs text-ink-soft">
                 {f.caption}
               </figcaption>
-            </motion.figure>
+            </m.figure>
           ))}
         </div>
       )}
@@ -124,7 +131,7 @@ function CollapsibleBlock({ block }: { block: CaseBlock }) {
             <MetricChip key={m}>{m}</MetricChip>
           ))}
         </span>
-        <motion.svg
+        <m.svg
           animate={{ rotate: open ? 0 : 180 }}
           transition={{ duration: 0.25 }}
           className="shrink-0 text-ink-soft transition-colors group-hover:text-ink"
@@ -137,11 +144,11 @@ function CollapsibleBlock({ block }: { block: CaseBlock }) {
           aria-hidden
         >
           <path d="m18 15-6-6-6 6" />
-        </motion.svg>
+        </m.svg>
       </button>
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -151,7 +158,7 @@ function CollapsibleBlock({ block }: { block: CaseBlock }) {
             <div className="pt-6">
               <BlockBody block={block} />
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

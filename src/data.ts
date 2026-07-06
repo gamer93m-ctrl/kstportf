@@ -19,6 +19,8 @@ import health3 from './assets/health-3.webp'
 export interface Figure {
   src: string
   caption: string
+  width: number
+  height: number
   wide?: boolean
 }
 
@@ -65,9 +67,9 @@ export const cases: CaseStudy[] = [
           'Интегрировал блок stories в витрину в формате товарных карточек с анимациями и прямыми линками на конкретные предложения.',
         ],
         figures: [
-          { src: ama1, caption: 'Главная страница (до)' },
-          { src: ama2, caption: 'Главная страница (после)' },
-          { src: ama3, caption: 'Stories' },
+          { src: ama1, caption: 'Главная страница (до)', width: 605, height: 1246 },
+          { src: ama2, caption: 'Главная страница (после)', width: 604, height: 1246 },
+          { src: ama3, caption: 'Stories', width: 605, height: 1246 },
         ],
       },
     ],
@@ -109,8 +111,8 @@ export const cases: CaseStudy[] = [
           'Быстрая адаптация интерфейса под новые задачи бизнеса.',
         ],
         figures: [
-          { src: itkComponent, caption: 'Описание компонента' },
-          { src: itkDatepicker, caption: 'Date Picker' },
+          { src: itkComponent, caption: 'Описание компонента', width: 913, height: 728 },
+          { src: itkDatepicker, caption: 'Date Picker', width: 893, height: 728 },
         ],
       },
       {
@@ -134,9 +136,9 @@ export const cases: CaseStudy[] = [
           'Визуализация прогресса и улучшение навигации привели к росту retention на 16% на отрезке 3-х месяцев.',
         ],
         figures: [
-          { src: loan1, caption: 'Главная страница (До)' },
-          { src: loan2, caption: 'Главная страница (После)' },
-          { src: loan3, caption: 'Совершить платёж' },
+          { src: loan1, caption: 'Главная страница (До)', width: 605, height: 1167 },
+          { src: loan2, caption: 'Главная страница (После)', width: 599, height: 1167 },
+          { src: loan3, caption: 'Совершить платёж', width: 591, height: 1167 },
         ],
       },
       {
@@ -156,8 +158,8 @@ export const cases: CaseStudy[] = [
           'По итогам A/B тестирования на различных региональных рынках конверсия в целевое действие увеличилась на 70%.',
         ],
         figures: [
-          { src: lenderCarousel, caption: 'Карусель' },
-          { src: lenderBento, caption: 'Бенто-сетка' },
+          { src: lenderCarousel, caption: 'Карусель', width: 907, height: 495 },
+          { src: lenderBento, caption: 'Бенто-сетка', width: 908, height: 495 },
         ],
       },
     ],
@@ -183,10 +185,10 @@ export const cases: CaseStudy[] = [
           'Создал и задокументировал библиотеку компонентов для десктоп-версии.',
         ],
         figures: [
-          { src: rosbankDesktop, caption: 'Мои продукты', wide: true },
-          { src: rosbank1, caption: 'Главная страница' },
-          { src: rosbank2, caption: 'Выбор карты' },
-          { src: rosbank3, caption: 'Карта выпущена' },
+          { src: rosbankDesktop, caption: 'Мои продукты', width: 1829, height: 1130, wide: true },
+          { src: rosbank1, caption: 'Главная страница', width: 605, height: 1172 },
+          { src: rosbank2, caption: 'Выбор карты', width: 599, height: 1172 },
+          { src: rosbank3, caption: 'Карта выпущена', width: 591, height: 1172 },
         ],
       },
     ],
@@ -216,9 +218,9 @@ export const cases: CaseStudy[] = [
           '+24% Добавление в корзину: увеличение наполняемости корзины за счёт внедрения рекомендательной системы и фильтров.',
         ],
         figures: [
-          { src: health1, caption: 'Главная страница' },
-          { src: health2, caption: 'Анализы + мини тест' },
-          { src: health3, caption: 'Наборы' },
+          { src: health1, caption: 'Главная страница', width: 605, height: 1224 },
+          { src: health2, caption: 'Анализы + мини тест', width: 604, height: 1224 },
+          { src: health3, caption: 'Наборы', width: 605, height: 1224 },
         ],
       },
     ],

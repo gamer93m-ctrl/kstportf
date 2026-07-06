@@ -1,11 +1,13 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { m } from 'framer-motion'
 import { profile } from '../data'
 import portrait from '../assets/portrait.webp'
 
 export default function Sidebar() {
+  const [photoLoaded, setPhotoLoaded] = useState(false)
   return (
     <aside className="bg-panel flex flex-col lg:fixed lg:inset-y-0 lg:left-0 lg:w-[340px] xl:w-[400px]">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -55,20 +57,30 @@ export default function Sidebar() {
             CV
           </a>
         </div>
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mt-auto min-h-0 flex-1"
+        className="relative mt-auto min-h-0 flex-1"
       >
+        {!photoLoaded && (
+          <div className="skeleton absolute inset-0 max-h-[420px] lg:max-h-none" aria-hidden />
+        )}
         <img
           src={portrait}
           alt="Константин, продуктовый дизайнер"
-          className="h-full max-h-[420px] w-full object-cover object-top lg:max-h-none"
+          width={915}
+          height={1114}
+          fetchPriority="high"
+          decoding="async"
+          onLoad={() => setPhotoLoaded(true)}
+          className={`h-full max-h-[420px] w-full object-cover object-top transition-opacity duration-500 lg:max-h-none ${
+            photoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         />
-      </motion.div>
+      </m.div>
     </aside>
   )
 }
