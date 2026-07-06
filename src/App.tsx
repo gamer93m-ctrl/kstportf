@@ -4,11 +4,13 @@ import AboutSection from './components/AboutSection'
 import FloatingNav from './components/FloatingNav'
 import ScrollTop from './components/ScrollTop'
 import { cases } from './data'
+import { useActiveSection } from './useActiveSection'
 
 export default function App() {
+  const active = useActiveSection()
   return (
     <div>
-      <Sidebar />
+      <Sidebar active={active} />
       <main className="lg:ml-[340px] xl:ml-[400px]">
         <div className="mx-auto max-w-4xl space-y-16 px-6 pt-10 pb-32 sm:px-10">
           {cases.map((study) => (
@@ -17,7 +19,7 @@ export default function App() {
           <AboutSection />
         </div>
       </main>
-      <FloatingNav />
+      <FloatingNav active={active} />
       <ScrollTop />
     </div>
   )

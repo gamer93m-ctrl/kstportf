@@ -1,29 +1,7 @@
-import { useEffect, useState } from 'react'
 import { m } from 'framer-motion'
 import { navItems } from '../data'
 
-export default function FloatingNav() {
-  const [active, setActive] = useState(navItems[0].id)
-
-  useEffect(() => {
-    const onScroll = () => {
-      const probe = window.innerHeight * 0.35
-      let current = navItems[0].id
-      for (const { id } of navItems) {
-        const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= probe) current = id
-      }
-      // At the very bottom, always highlight the last section
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
-        current = navItems[navItems.length - 1].id
-      }
-      setActive(current)
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
+export default function FloatingNav({ active }: { active: string }) {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
