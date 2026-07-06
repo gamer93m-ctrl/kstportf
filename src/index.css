@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #1c1c1e;
+  --color-ink-soft: #4b4b50;
+  --color-panel: #f4f3f1;
+  --color-line: #e6e5e2;
+  --color-pill: #4d4d4f;
+  --color-accent: #16a34a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-ink antialiased;
+}
+
+::selection {
+  background: #1c1c1e;
+  color: #fff;
+}
