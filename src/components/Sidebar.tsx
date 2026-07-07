@@ -114,19 +114,6 @@ export default function Sidebar({ active }: { active: string }) {
             photoLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         />
-        {/* Цвет панели мягко перетекает в фон фотографии (кроссфейд при смене кейса) */}
-        <AnimatePresence>
-          <m.div
-            key={active}
-            className="pointer-events-none absolute inset-0"
-            style={{ background: `linear-gradient(to bottom, ${theme.bg} 0%, transparent 45%)` }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.1, ease: 'easeOut' }}
-            aria-hidden
-          />
-        </AnimatePresence>
       </m.div>
     </aside>
   )
