@@ -1,6 +1,6 @@
 export function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="glass-chip rounded-full px-3.5 py-1.5 text-xs font-light whitespace-nowrap">
+    <span className="glass-chip rounded-full px-3.5 py-1.5 text-xs font-normal whitespace-nowrap">
       {children}
     </span>
   )
