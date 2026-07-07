@@ -7,14 +7,12 @@ export default function FloatingNav({ active }: { active: string }) {
   }
 
   return (
-    // top от 100svh (минимальная высота вьюпорта): позиция не меняется,
-    // когда мобильный браузер прячет/показывает свою панель при скролле
-    <div className="pointer-events-none fixed inset-x-0 top-[calc(100svh-84px)] z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
+    <div className="pointer-events-none fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
       <m.nav
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
-        className="glass-nav pointer-events-auto flex max-w-[calc(100vw-2rem)] items-center gap-1 overflow-x-auto rounded-full p-1.5"
+        className="glass-nav pointer-events-auto flex items-center rounded-full p-1 sm:gap-1 sm:p-1.5"
         aria-label="Навигация по кейсам"
       >
         {navItems.map((item) => {
@@ -24,7 +22,7 @@ export default function FloatingNav({ active }: { active: string }) {
               key={item.id}
               type="button"
               onClick={() => scrollTo(item.id)}
-              className={`relative rounded-full px-4 py-2 text-[13px] font-normal whitespace-nowrap transition-colors ${
+              className={`relative rounded-full px-2.5 py-2 text-xs font-normal whitespace-nowrap transition-colors sm:px-4 sm:text-[13px] ${
                 isActive ? 'text-ink' : 'text-white/85 hover:text-white'
               }`}
             >
