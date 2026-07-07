@@ -86,11 +86,6 @@ export default function Sidebar() {
             photoLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         />
-        {/* Растворяем стык фото и панели: фон фото чуть темнее по верхней кромке */}
-        <div
-          className="from-panel pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b to-transparent"
-          aria-hidden
-        />
       </m.div>
     </aside>
   )
