@@ -7,7 +7,9 @@ export default function FloatingNav({ active }: { active: string }) {
   }
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-8 z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
+    // top от 100svh (минимальная высота вьюпорта): позиция не меняется,
+    // когда мобильный браузер прячет/показывает свою панель при скролле
+    <div className="pointer-events-none fixed inset-x-0 top-[calc(100svh-84px)] z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
       <m.nav
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

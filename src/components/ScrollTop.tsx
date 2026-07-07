@@ -20,7 +20,7 @@ export default function ScrollTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="border-line fixed right-4 bottom-24 z-50 lg:right-6 lg:bottom-8 flex size-11 items-center justify-center rounded-full border bg-white shadow-lg transition-transform hover:-translate-y-0.5"
+          className="border-line fixed top-[calc(100svh-148px)] right-4 z-50 lg:top-[calc(100svh-84px)] lg:right-6 flex size-11 items-center justify-center rounded-full border bg-white shadow-lg transition-transform hover:-translate-y-0.5"
           aria-label="Наверх"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
