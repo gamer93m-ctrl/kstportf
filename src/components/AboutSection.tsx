@@ -61,14 +61,14 @@ export default function AboutSection() {
         <h3 className="mb-4 text-lg font-normal tracking-tight">Мои рабочие инструменты</h3>
         <div className="flex flex-wrap gap-2.5">
           {about.tools.map((t) => (
-            <span
+            <img
               key={t.name}
+              src={encodeURI(t.src)}
+              alt={t.name}
               title={t.name}
-              className="flex size-11 items-center justify-center rounded-xl text-sm font-bold transition-transform hover:-translate-y-0.5"
-              style={{ backgroundColor: t.bg, color: t.color }}
-            >
-              {t.short}
-            </span>
+              loading="lazy"
+              className="size-11 rounded-xl transition-transform hover:-translate-y-0.5"
+            />
           ))}
         </div>
       </m.div>
