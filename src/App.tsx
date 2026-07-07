@@ -10,7 +10,7 @@ export default function App() {
   const active = useActiveSection()
   return (
     <div>
-      <Sidebar active={active} />
+      <Sidebar />
       <main className="lg:ml-[340px] xl:ml-[400px]">
         <div className="mx-auto max-w-4xl space-y-16 px-6 pt-10 pb-32 sm:px-10">
           {cases.map((study) => (

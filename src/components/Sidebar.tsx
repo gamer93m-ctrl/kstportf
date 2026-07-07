@@ -1,70 +1,37 @@
 import { useState } from 'react'
-import { AnimatePresence, m } from 'framer-motion'
+import { m } from 'framer-motion'
 import { profile } from '../data'
-import { sectionThemes } from '../useActiveSection'
 import portrait from '../assets/portrait.webp'
 
-export default function Sidebar({ active }: { active: string }) {
+export default function Sidebar() {
   const [photoLoaded, setPhotoLoaded] = useState(false)
-  const theme = sectionThemes[active] ?? sectionThemes.about
-  // Базовый слой держит предыдущий цвет, пока новый заливает панель волной
-  const [baseBg, setBaseBg] = useState(theme.bg)
 
   return (
-    <aside className="relative flex flex-col overflow-hidden lg:fixed lg:inset-y-0 lg:left-0 lg:w-[340px] xl:w-[400px]">
-      {/* Заливка настроения кейса: новый цвет расходится «чернильной каплей» из нижнего угла */}
-      <div className="absolute inset-0" style={{ background: baseBg }} aria-hidden />
-      <div className="absolute inset-0 overflow-hidden" aria-hidden>
-        <AnimatePresence>
-          <m.div
-            key={active}
-            className="absolute size-[3000px] rounded-full"
-            style={{ background: theme.bg, left: '18%', bottom: '4%' }}
-            initial={{ scale: 0, x: '-50%', y: '50%' }}
-            animate={{ scale: 1, x: '-50%', y: '50%' }}
-            exit={{ opacity: 1 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            onAnimationComplete={() => setBaseBg(theme.bg)}
-          />
-        </AnimatePresence>
-      </div>
-
+    <aside className="bg-panel flex flex-col lg:fixed lg:inset-y-0 lg:left-0 lg:w-[340px] xl:w-[400px]">
       <m.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="relative z-10 flex flex-col gap-5 px-7 pt-8 pb-6"
+        className="flex flex-col gap-5 px-7 pt-8 pb-6"
       >
         <div className="flex flex-wrap gap-2">
           {profile.badges.map((b) => (
             <span
               key={b}
-              className={`glass-chip rounded-full px-3.5 py-1.5 text-xs font-normal transition-colors duration-700 ${
-                theme.dark ? 'text-ink' : 'text-ink-soft'
-              }`}
+              className="glass-chip rounded-full px-3.5 py-1.5 text-xs font-normal text-ink-soft"
             >
               {b}
             </span>
           ))}
         </div>
 
-        <h1
-          className={`text-[28px] leading-tight font-normal tracking-tight transition-colors duration-700 xl:text-[32px] ${
-            theme.dark ? 'text-white' : 'text-ink'
-          }`}
-        >
+        <h1 className="text-[28px] leading-tight font-normal tracking-tight xl:text-[32px]">
           {profile.role}
           <br />
           {profile.grade}
         </h1>
 
-        <p
-          className={`text-sm leading-relaxed transition-colors duration-700 ${
-            theme.dark ? 'text-white/70' : 'text-ink-soft'
-          }`}
-        >
-          {profile.intro}
-        </p>
+        <p className="text-sm leading-relaxed text-ink-soft">{profile.intro}</p>
 
         <div className="flex gap-2.5">
           <a
@@ -97,7 +64,7 @@ export default function Sidebar({ active }: { active: string }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 mt-auto min-h-0 flex-1"
+        className="relative mt-auto min-h-0 flex-1"
       >
         {!photoLoaded && (
           <div className="skeleton absolute inset-0 max-h-[420px] lg:max-h-none" aria-hidden />
