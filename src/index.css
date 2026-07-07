@@ -14,11 +14,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Горизонтального скролла у страницы не бывает никогда
-   (hidden — фолбэк для старых Safari, clip — современное поведение) */
-html,
-body {
+/* Горизонтального скролла у страницы не бывает никогда */
+html {
   overflow-x: hidden;
+}
+
+body,
+#root {
+  max-width: 100vw;
   overflow-x: clip;
 }
 
