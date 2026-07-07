@@ -14,6 +14,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Горизонтального скролла у страницы не бывает никогда */
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   @apply bg-white font-sans font-light text-ink antialiased;
 }

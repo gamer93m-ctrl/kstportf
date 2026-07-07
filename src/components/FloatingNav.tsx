@@ -7,7 +7,7 @@ export default function FloatingNav({ active }: { active: string }) {
   }
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
+    <div className="pointer-events-none fixed inset-x-0 bottom-[max(2.5rem,env(safe-area-inset-bottom))] z-50 flex justify-center lg:left-[340px] xl:left-[400px]">
       <m.nav
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
