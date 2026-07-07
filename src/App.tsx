@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div>
       <Sidebar />
-      <main className="lg:ml-[340px] xl:ml-[400px]">
+      <main className="lg:ml-[var(--sidebar-w)]">
         <div className="mx-auto max-w-4xl space-y-16 px-6 pt-10 pb-32 sm:px-10">
           {cases.map((study) => (
             <CaseSection key={study.id} study={study} />

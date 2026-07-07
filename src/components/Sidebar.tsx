@@ -7,7 +7,7 @@ export default function Sidebar() {
   const [photoLoaded, setPhotoLoaded] = useState(false)
 
   return (
-    <aside className="bg-panel flex flex-col lg:fixed lg:inset-y-0 lg:left-0 lg:w-[340px] xl:w-[400px]">
+    <aside className="bg-panel flex flex-col lg:fixed lg:inset-y-0 lg:left-0 lg:w-[var(--sidebar-w)]">
       <m.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
