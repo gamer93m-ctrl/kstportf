@@ -23,7 +23,7 @@ export default function AboutSection() {
         transition={{ duration: 0.55, ease: 'easeOut' }}
         className="space-y-4"
       >
-        <h2 className="text-2xl font-semibold tracking-tight">{about.title}</h2>
+        <h2 className="text-2xl font-normal tracking-tight">{about.title}</h2>
         {about.paragraphs.map((p, i) => (
           <p key={i} className="max-w-3xl text-sm leading-relaxed text-ink-soft">
             {p}
@@ -58,7 +58,7 @@ export default function AboutSection() {
         transition={{ duration: 0.55, ease: 'easeOut' }}
         className="mt-10"
       >
-        <h3 className="mb-4 text-lg font-semibold tracking-tight">Мои рабочие инструменты</h3>
+        <h3 className="mb-4 text-lg font-normal tracking-tight">Мои рабочие инструменты</h3>
         <div className="flex flex-wrap gap-2.5">
           {about.tools.map((t) => (
             <span

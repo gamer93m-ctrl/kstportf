@@ -22,7 +22,7 @@ export default function FloatingNav({ active }: { active: string }) {
               key={item.id}
               type="button"
               onClick={() => scrollTo(item.id)}
-              className={`relative rounded-full px-4 py-2 text-[13px] font-medium whitespace-nowrap transition-colors ${
+              className={`relative rounded-full px-4 py-2 text-[13px] font-light whitespace-nowrap transition-colors ${
                 isActive ? 'text-ink' : 'text-white/85 hover:text-white'
               }`}
             >
